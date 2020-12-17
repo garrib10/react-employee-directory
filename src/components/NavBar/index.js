@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Nav() {
+
+function NavBar() {
     return (
         <h1> Employee Directory</h1>
     )
@@ -8,4 +9,4 @@ function Nav() {
 
 
 
-export default Nav 
+export default NavBar
