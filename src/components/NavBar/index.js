@@ -3,7 +3,11 @@ import React from 'react';
 
 function NavBar() {
     return (
-        <h1> Employee Directory</h1>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="search-area col-4" >
+
+            </div>
+        </nav>
     )
 }
 
