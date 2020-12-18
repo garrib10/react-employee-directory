@@ -1,10 +1,13 @@
 import React from 'react'; 
+import  './footer.css';
 
 function Footer() {
     return (
-      <h7> Copyright by MIT </h7>
-    )
+      <div className="footer">
+      <h5> Copyright by MIT </h5>
+      </div>
+    );
     
 }
 
-export default Footer
+export default Footer;
