@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import API from '../../utils/api.js'
 
-export default class DataArea extends Component{
+export default class TableArea extends Component{
     state = {
         users: [{}]
     }
@@ -16,7 +16,7 @@ export default class DataArea extends Component{
     }
     render() {
         return (
-            <h1> DataArea here </h1>
+            <h2> TableArea Here </h2>
         )
     }
 }
