@@ -1,12 +1,11 @@
-import React from 'react';
-import Searchbox from '../Searchbox'
-
-function Main({handleSearchChange}) {
+import React from "react";
+import TableArea from "../TableArea/index.js";
+import "./main.css"
+function Main() {
   return (
       <div> 
-        <Searchbox 
-        handleSearchChange={handleSearchChange}
-        />
+        
+        <TableArea/>
       </div>
   )
 }
