@@ -5,9 +5,7 @@ import "./table.css";
 function Table ({headings,users, handleSort}){
     return (
         <div className="datatable mt-5">
-            <table
-                id="table"
-                className="table table-striped table-hover table-condensed"
+            <table className="table table-striped table-hover table-condensed" id="table"
             >
                 <thead>
                     <tr>
