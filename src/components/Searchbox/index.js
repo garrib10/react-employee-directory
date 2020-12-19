@@ -8,8 +8,7 @@ function Searchbox({ handleSearchChange }) {
                 className="form-control" 
                 type="search" 
                 placeholder="search"
-                onChange={e => handleSearchChange(e)}
-                >
+                onChange={e => handleSearchChange(e)}>
             
                 </input>
 
