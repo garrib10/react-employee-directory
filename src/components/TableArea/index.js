@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import API from '../../utils/api.js';
+import API from "../utils/API";
 import NavBar from '../NavBar';
 import Table from '../Table';
 import './tableArea.css';
@@ -36,8 +36,7 @@ export default class TableArea extends Component {
             if (this.state.order === "ascend") {
                 if (a[heading] === undefined) {
                     return 1;
-                }
-                else if (b[heading] === undefined) {
+                }else if (b[heading] === undefined) {
                     return -1;
                 }
                 else if (heading === "name") {
@@ -45,8 +44,7 @@ export default class TableArea extends Component {
                 } else {
                     return b[heading] - a[heading];
                 }
-            }
-            else {
+            } else {
                 if (a[heading] === undefined) {
                     return 1;
                 } else if (b[heading] === undefined) {
@@ -74,7 +72,7 @@ export default class TableArea extends Component {
         });
         this.setState({ filteredUsers: filteredList });
     }
-
+    
     componentDidMount() {
         API.getUsers().then(results => {
             console.log(results)
@@ -95,6 +93,7 @@ export default class TableArea extends Component {
                         handleSort={this.handleSort}
                     />
                 </div>
+
             </div>
         );
     }
