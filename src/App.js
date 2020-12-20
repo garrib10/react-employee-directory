@@ -1,5 +1,5 @@
 import './App.css';
-import NavBar from './components/NavBar';
+
 import  Header from './components/Header';
 import Main from './components/Main'; // Module Error can't be found with api route  
 import Footer from './components/Footer';
@@ -10,11 +10,12 @@ function App() {
   return (
     <div>
       <Header />
-      <NavBar />
+  
       <Wrapper>
       <Main/>
-      </Wrapper>
       <Footer />
+      </Wrapper>
+    
      
     </div>
   );
