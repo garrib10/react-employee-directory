@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import TableBody from "../TableBody";
+import TableBody from "../DataBody";
 import "./table.css";
-import DataContext from "../../utils/DataContext";
+import DataContext from "../../utils/DataAreaContext";
 
 const Table = () => {
     const context = useContext(DataContext);

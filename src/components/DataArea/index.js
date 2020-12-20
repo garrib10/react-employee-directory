@@ -1,8 +1,8 @@
 import React, { Component} from "react";
 import NavBar from "../NavBar";
-import Table from "../Table";
+import Table from "../DataTable";
 import API from "../../utils/Api";
-import "../Directory";
+import "../..";
 
 export default class Directory extends Component {
 

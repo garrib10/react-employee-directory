@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./tableBody.css";
-import  DataContext from "../../utils/DataContext";
+import  DataContext from "../../utils/DataAreaContext";
 import Moment from "react-moment";
 
 
