@@ -1,5 +1,5 @@
 import React from 'react';
-import Searchbox from '../Searchbox'
+import Searchbox from '../SearchBox'
 
 
 function NavBar() {
@@ -12,4 +12,4 @@ function NavBar() {
 
 
 
-export default NavBar
+export default NavBar;

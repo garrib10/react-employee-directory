@@ -1,13 +1,13 @@
 import React from "react";
-import "./main.css"
-import Directory from "../Directory/index.js";
+import DataArea from "../DataArea/index.js";
+import "./Main.css";
 
 function Main (){
-  return (
-      <>
-      <Directory/>
-      </>
-  );
+    return (
+        <>
+        <DataArea />
+        </>
+    );
 };
 
 export default Main;
