@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import DataTable from "../DataTable";
-import NavBar from "../NavBar";
 import API from "../../utils/API";
 import "./DataArea.css";
 
@@ -15,8 +14,8 @@ export default class TableArea extends Component {
   headings =[
       {name: "Image", width :"10%"},
       {name: "Name", width :"10%"},
-      {name: "Phone", width :"20%"},
-      {name: "Email", width :"20%"},
+      {name: "Phone", width :"15%"},
+      {name: "Email", width :"15%"},
       {name: "DOB", width :"10%"},
 
   ]
@@ -91,8 +90,8 @@ export default class TableArea extends Component {
     render (){
         return (
             <div>
-              <NavBar handleSearchChange={this.handleSearchChange} />
-            <div className= "table-area">
+               
+            <div className= "data-area">
               <DataTable
               headings={this.headings}
               users={this.state.filteredUsers}
