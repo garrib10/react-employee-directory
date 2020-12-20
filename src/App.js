@@ -1,7 +1,7 @@
 import './App.css';
 
 import  Header from './components/Header';
-import Main from './components/Main'; // Module Error can't be found with api route  
+import Main from './components/Main'; 
 import Footer from './components/Footer';
 import Wrapper from './components/Wrapper';
 
