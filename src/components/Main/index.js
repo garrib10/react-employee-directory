@@ -1,13 +1,13 @@
 import React from "react";
-
 import "./main.css"
-function Main() {
-  return (
-      <div> 
-        
-      
-      </div>
-  )
-}
+import Directory from "../Directory/index.js";
 
-export default Main
+function Main (){
+  return (
+      <>
+      <Directory/>
+      </>
+  );
+};
+
+export default Main;

@@ -1,121 +1,105 @@
-import React, {useState, useEffect} from "react";
+import React, { Component} from "react";
+import NavBar from "../NavBar";
 import Table from "../Table";
-import Nav from "../Nav";
-import API from "../../utils/API";
-import "./directory.css";
-import DataContext from "../../utils/DataContext"
+import API from "../../utils/Api";
+import "../Directory";
 
+export default class Directory extends Component {
 
-const Directory = () => {
-        const [ employees , setEmployeeState] = useState({
-            users: [],
-            order: "ascend",
-            filteredUsers: [],
-            headings: [{
-                    name: "",
-                    width: "10%",
-                },
-                {
-                    name: "Name",
-                    width: "20%",
-                },
-                {
-                    name: "Email",
-                    width: "20%",
-                },
-                {
-                    name: "Age",
-                    width: "15%",
-                },
-                {
-                    name: "Birthday",
-                    width: "15%",
-                }
+    state = {
+        users:[{}],
+        order: 'descend',
+        filteredUsers:[{}]
+    }
+    headings =[
+        {name: "Image", width :"10%"},
+        {name: "Name", width :"10%"},
+        {name: "Phone", width :"20%"},
+        {name: "Email", width :"20%"},
+        {name: "DOB", width :"10%"},
 
-
-            ]
-        });
-    
-      const sortList = heading => {
-        if (employees.order === "descend") {
-            setEmployeeState({
-                order:"ascend"
+    ]
+    //handle sort
+    handleSort = heading => {
+        if (this.state.order === "descend"){
+            this.setState({
+                order: "ascend"
             })
         } else {
-            setEmployeeState({
-                order:"descend"
+            this.setState({
+                order: "descend"
             })
         }
-        
-    
+
         const compareFnc = (a, b) => {
-          if (employees.order === "ascend") {
-            if (a[heading] === undefined) {
-              return 1;
-            } else if (b[heading] === undefined) {
-              return -1;
-            } else if (heading === "name") {
-              return a[heading].first.localeCompare(b[heading].first);
+            if (this.state.order === "ascend") {
+              // account for missing values
+              if (a[heading] === undefined) {
+                return 1;
+              } else if (b[heading] === undefined) {
+                return -1;
+              }
+              // numerically
+              else if (heading === "name") {
+                return a[heading].first.localeCompare(b[heading].first);
+              } else {
+                return a[heading] - b[heading];
+              }
             } else {
-              return b[heading] - a[heading];
-            } 
-          } else {
-        if (a[heading] === undefined){
-            return 1;
-        } else if (b[heading] === undefined){
-            return -1;
-        } else if (heading ==="name"){
-            return b[heading].first.localeCompare(a[heading].first);
-        } else {
-return b[heading]-  a[heading];
-        }
+              // account for missing values
+              if (a[heading] === undefined) {
+                return 1;
+              } else if (b[heading] === undefined) {
+                return -1;
+              }
+              // numerically
+              else if (heading === "name") {
+                return b[heading].first.localeCompare(a[heading].first);
+              } else {
+                return b[heading] - a[heading];
+              }
+            }
+      
+          }
+          const sortedUsers = this.state.filteredUsers.sort(compareFnc);
+          this.setState({ filteredUsers: sortedUsers });
     }
-    }
-        const sortedUsers = employees.filteredUsers.sort(compareFnc);
 
-        setEmployeeState({
-          ...employees,
-          filteredUsers: sortedUsers
-});
-
-console.log(`Sort by ${heading} ${employees.order}`)
-
- }; 
-      const filterEmployees = event => {
+    handleSearchChange = event => {
+        console.log(event.target.value);
         const filter = event.target.value;
-        const filteredList = employees.users.filter(item => {
-          let values = item.name.last.toLowerCase() ;
+        const filteredList = this.state.users.filter(item => {
+          // merge data together, then see if user input is anywhere inside
+          let values = Object.values(item)
+            .join("")
+            .toLowerCase();
           return values.indexOf(filter.toLowerCase()) !== -1;
         });
-    
-        setEmployeeState({ 
-        ...employees, 
-        filteredUsers: filteredList });
-      };
+        this.setState({ filteredUsers: filteredList });
+      }
 
-      useEffect(() => {
-        API.getEmployeeList().then(results => {
-          setEmployeeState({
-            ...employees,
-            users: results.data.results,
-            filteredUsers: results.data.results
+      componentDidMount() {
+          API.getUsers().then( results => {
+              this.setState({
+                  users: results.data.results,
+                  filteredUsers: results.data.results
+              });
           });
-        });
-      }, );
-    
-      return (
-            <DataContext.Provider
-              value={{ employees, filterEmployees, sortList }}
-            >
-              <Nav />
-              <div className="data-area">
-                {employees.filteredUsers.length > 0 
-        ? <Table />
-         : <div></div>
-         }
-              </div>
-            </DataContext.Provider>
-          );
-        }
-    
-    export default Directory;
+      }
+
+      render (){
+          return (
+              <div>
+                <NavBar handleSearchChange={this.handleSearchChange} />
+              <div className= "table-area">
+                <Table
+                headings={this.headings}
+                users={this.state.filteredUsers}
+                handleSort={this.handleSort}
+                 />
+            </div>
+
+            </div>
+    );
+    }
+}
