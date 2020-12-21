@@ -1,7 +1,7 @@
 ## Unit 19 React Homework: Employee Directory
 
 ## Overview
-For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
+For this assignment, we were told to create an Employee Directory application that uses React. With that being said I created my app using Random User API, to create users for this applicaion. Also, we were told to sort the table using at least one category, an d filter the users by at least one property. 
 
 ## User Story
 
