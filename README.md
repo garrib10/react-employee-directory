@@ -25,11 +25,12 @@ Filter the users by at least one property.
 ## Submission on BCS
 You are required to submit the following:
 
+Github Link: https://github.com/garrib10/react-employee-directory
 
-the URL to the deployed application
+Deployed Link: https://garrib10.github.io/react-employee-directory/ 
 
 
-the URL to the Github repository
+
 
 ## Screenshots
 
