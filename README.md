@@ -29,9 +29,6 @@ Github Link: https://github.com/garrib10/react-employee-directory
 
 Deployed Link: https://garrib10.github.io/react-employee-directory/ 
 
-
-
-
 ## Screenshots
 
 

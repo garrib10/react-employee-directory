@@ -1,3 +1,6 @@
+.datatable{
+    text-align: center;
+}
 .datatable .col {
     cursor: pointer;
     background-color:rgb(115, 199, 248);;

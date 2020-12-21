@@ -20,7 +20,7 @@ function TableBody({users}) {
         users.map(({ login, name, picture, phone, email, dob }) => {
           return (
             <tr key={login.uuid}>
-              <td data-th="Image" className="align-middle">
+              <td data-th="Image" className="align-center">
                 <img
                   src={picture.medium}
                   alt={"profile image for " + name.first + " " + name.last}
