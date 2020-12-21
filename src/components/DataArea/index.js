@@ -93,9 +93,9 @@ export default class TableArea extends Component {
     render (){
         return (
             <div>
-               
+               <NavBar handleSearchChange={this.handleSearchChange} />
             <div className= "data-area">
-             <NavBar handleSearchChange={this.handleSearchChange} />
+             
               <DataTable
               headings={this.headings}
               users={this.state.filteredUsers}
