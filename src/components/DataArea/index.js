@@ -1,7 +1,10 @@
 import React, {Component} from "react";
 import DataTable from "../DataTable";
-import API from "../../utils/API";
+import NavBar from "../NavBar"
+import API from "../../utils/Api";
 import "./DataArea.css";
+
+
 
 
 export default class TableArea extends Component {
@@ -33,26 +36,26 @@ export default class TableArea extends Component {
 
       const compareFnc = (a, b) => {
           if (this.state.order === "ascend") {
-            // account for missing values
+           
             if (a[heading] === undefined) {
               return 1;
             } else if (b[heading] === undefined) {
               return -1;
             }
-            // numerically
+          
             else if (heading === "name") {
               return a[heading].first.localeCompare(b[heading].first);
             } else {
               return a[heading] - b[heading];
             }
           } else {
-            // account for missing values
+           
             if (a[heading] === undefined) {
               return 1;
             } else if (b[heading] === undefined) {
               return -1;
             }
-            // numerically
+            
             else if (heading === "name") {
               return b[heading].first.localeCompare(a[heading].first);
             } else {
@@ -92,6 +95,7 @@ export default class TableArea extends Component {
             <div>
                
             <div className= "data-area">
+             <NavBar handleSearchChange={this.handleSearchChange} />
               <DataTable
               headings={this.headings}
               users={this.state.filteredUsers}
