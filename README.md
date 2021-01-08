@@ -33,7 +33,8 @@ Deployed Link: https://garrib10.github.io/react-employee-directory/
 
 <img width="1440" alt="Screen Shot 2021-01-08 at 3 18 22 AM" src="https://user-images.githubusercontent.com/68867054/103991143-4d44d900-5160-11eb-8af7-8309c79e726f.png">
 
-<img width="1440" alt="Screen Shot 2021-01-08 at 3 18 22 AM" src="https://user-images.githubusercontent.com/68867054/103991143-4d44d900-5160-11eb-8af7-8309c79e726f.png">
+
+<img width="1438" alt="Screen Shot 2021-01-08 at 3 14 42 AM" src="https://user-images.githubusercontent.com/68867054/103991284-74030f80-5160-11eb-80fe-0b0d40322607.png">
 
 <img width="1438" alt="Screen Shot 2021-01-08 at 3 15 05 AM" src="https://user-images.githubusercontent.com/68867054/103991220-6188d600-5160-11eb-944a-04ca49809726.png">
 
